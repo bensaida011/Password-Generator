@@ -1,4 +1,4 @@
-"""
+
 The MIT License (MIT)
 
 Copyright (c) 2025 bensaida011
@@ -20,17 +20,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-"""
-from gui import Mywidget
-from PySide6 import QtWidgets
-import sys
-
-if __name__ == "__main__":
-    app =  QtWidgets.QApplication([])
-
-    widget = Mywidget()
-    widget.resize(400,400)
-    widget.show()
-    widget.setWindowTitle("Password Generator")
-    sys.exit(app.exec())
-    

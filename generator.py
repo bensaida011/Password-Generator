@@ -21,16 +21,20 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
-from gui import Mywidget
-from PySide6 import QtWidgets
-import sys
 
-if __name__ == "__main__":
-    app =  QtWidgets.QApplication([])
+import random
+import string
 
-    widget = Mywidget()
-    widget.resize(400,400)
-    widget.show()
-    widget.setWindowTitle("Password Generator")
-    sys.exit(app.exec())
-    
+
+
+
+def password_gen(length):
+    lowercase = string.ascii_lowercase
+    uppercase = string.ascii_uppercase
+    symbols = string.punctuation
+    number = string.digits
+    combo = lowercase + uppercase + symbols + number
+
+    return ''.join(random.choice(combo) for i in range(length))
+
+# print(password_gen())
