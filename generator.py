@@ -37,4 +37,4 @@ def password_gen(length):
 
     return ''.join(random.choice(combo) for i in range(length))
 
-# print(password_gen())
+print(password_gen(16))

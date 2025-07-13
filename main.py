@@ -29,7 +29,7 @@ if __name__ == "__main__":
     app =  QtWidgets.QApplication([])
 
     widget = Mywidget()
-    widget.resize(400,400)
+    widget.resize(300,300)
     widget.show()
     widget.setWindowTitle("Password Generator")
     sys.exit(app.exec())

@@ -23,10 +23,40 @@ SOFTWARE.
 """
 
 from PySide6 import QtCore , QtWidgets, QtGui
-
-
+from generator import password_gen
 
 
 class Mywidget(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
+
+
+        self.label1 = QtWidgets.QLabel("Password Generator")
+        self.text_copy =QtWidgets.QLineEdit("")
+
+        self.button_generate = QtWidgets.QPushButton("Generate")
+        self.button_generate.setStyleSheet('background-color: green')
+        self.button_exit = QtWidgets.QPushButton("Exit")
+        self.button_exit.setStyleSheet('background-color: red')
+
+        self.layout = QtWidgets.QVBoxLayout(self)
+
+        self.layout.addWidget(self.label1)
+        self.layout.addWidget(self.text_copy)
+        self.layout.addWidget(self.button_generate)
+        self.layout.addWidget(self.button_exit)
+
+        self.button_generate.clicked.connect(self.generate_password)
+        self.button_exit.clicked.connect(self.exit_button)
+
+        self.ErrorMessage = QtWidgets.QErrorMessage(self)
+
+
+    @QtCore.Slot()
+    def generate_password(self):
+        password = password_gen(16)
+        self.text_copy.setText(password)
+
+
+    def exit_button(self):
+        QtCore.QCoreApplication.exit(0)
