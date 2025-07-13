@@ -26,8 +26,6 @@ import random
 import string
 
 
-
-
 def password_gen(length):
     lowercase = string.ascii_lowercase
     uppercase = string.ascii_uppercase
@@ -37,4 +35,3 @@ def password_gen(length):
 
     return ''.join(random.choice(combo) for i in range(length))
 
-print(password_gen(16))

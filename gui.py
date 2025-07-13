@@ -30,8 +30,17 @@ class Mywidget(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
 
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(12)
+        font.setBold(True)
+
+
+
 
         self.label1 = QtWidgets.QLabel("Password Generator")
+        self.label1.setFont(font)
+        self.label1.adjustSize()
         self.text_copy =QtWidgets.QLineEdit("")
 
         self.button_generate = QtWidgets.QPushButton("Generate")
